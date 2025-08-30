@@ -44,12 +44,12 @@ a {
     --primary-light: hsl(210, 100%, 60%);
     --accent: hsl(355, 84%, 37%);
     --accent-light: hsl(355, 84%, 47%);
-    --gray: hsl(220, 8%, 46%);
+    --gray: hsl(220, 12%, 35%);
     --gray-light: hsl(220, 15%, 96%);
     --dark: hsl(220, 15%, 10%);
     --white: #ffffff;
-    --green: #25d366;
-    --green-hover: #22c05b;
+    --green: #1e8e3e;
+    --green-hover: #1a7c36;
 }
 
 /* Typography */
