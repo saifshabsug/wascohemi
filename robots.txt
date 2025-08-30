@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://spacetoonevent.github.io/WASCOHEMI/sitemap.xml
+
+# Allow all search engines to crawl the site
+# This is optimized for Google Ads compliance and SEO
+
+# Disallow crawling of any admin or private directories (none exist)
+# Allow crawling of all public content including:
+# - Main landing page (index.html)
+# - Privacy policy (privacy.html)
+# - Terms and conditions (terms.html)
+# - Refund policy (refund.html)
+# - All assets (CSS, images)
+
+# Crawl-delay: Not specified (allow default crawling speed)

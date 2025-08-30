@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wasco × Hemi Import — Industrial Production Lines & Equipment from China</title>
+    <meta name="description" content="Sourcing, negotiation, quality inspection, and shipping of industrial production lines and machinery from China. WhatsApp for instant replies. Global delivery.">
+    <meta name="author" content="Wasco × Hemi Import">
+    
+    <meta property="og:title" content="Wasco × Hemi Import — Industrial Production Lines & Equipment from China">
+    <meta property="og:description" content="Sourcing, negotiation, quality inspection, and shipping of industrial production lines and machinery from China. WhatsApp for instant replies. Global delivery.">
+    <meta property="og:type" content="website">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <link rel="stylesheet" href="assets/css/styles.css">
+    
+    <!-- Google Tag Manager -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        // GTM container will be added here
+    </script>
+</head>
+<body>
+    <!-- WhatsApp Popup Form -->
+    <div id="whatsappPopup" class="whatsapp-popup">
+        <div class="popup-content">
+            <button class="popup-close" onclick="closeWhatsAppPopup()">&times;</button>
+            
+            <div class="popup-header">
+                <h3>Get Your Industrial Equipment Quote</h3>
+                <p>Fill out the form below and we'll contact you via WhatsApp with detailed information</p>
+            </div>
+            
+            <form class="whatsapp-form" onsubmit="submitWhatsAppForm(event)">
+                <div class="form-field">
+                    <label for="productType">What do you need? *</label>
+                    <select id="productType" name="productType" required onchange="toggleCustomEquipment()">
+                        <option value="">Select product type...</option>
+                        <option value="Cement Production Lines">Cement Production Lines</option>
+                        <option value="AAC Blocks Production Lines">AAC Blocks Production Lines</option>
+                        <option value="Solar Panels & Energy Systems">Solar Panels & Energy Systems</option>
+                        <option value="Industrial Pumps & Machinery">Industrial Pumps & Machinery</option>
+                        <option value="Custom Equipment">Custom Equipment</option>
+                    </select>
+                </div>
+                
+                <div id="customEquipmentField" class="form-field custom-equipment-field">
+                    <label for="customDetails">Please describe the equipment you need *</label>
+                    <textarea id="customDetails" name="customDetails" placeholder="Please provide detailed description of the custom equipment you need..."></textarea>
+                </div>
+                
+                <div class="form-field">
+                    <label for="quantity">Quantity *</label>
+                    <input type="number" id="quantity" name="quantity" placeholder="Enter quantity needed" required min="1">
+                </div>
+                
+                <div class="form-field">
+                    <label for="country">Destination Country *</label>
+                    <div class="country-dropdown" id="countryDropdown">
+                        <div class="country-search" onclick="toggleCountryDropdown()">
+                            <input type="text" class="country-search-input" id="countryInput" placeholder="Search or select country..." oninput="filterCountries()" readonly>
+                            <svg class="country-dropdown-arrow" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M7 10l5 5 5-5z"/>
+                            </svg>
+                        </div>
+                        <div class="country-options" id="countryOptions">
+                            <!-- Countries will be populated by JavaScript -->
+                        </div>
+                    </div>
+                    <input type="hidden" id="selectedCountry" name="country" required>
+                </div>
+                
+                <button type="submit" class="form-submit">
+                    <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.488"/>
+                    </svg>
+                    Send WhatsApp Message
+                </button>
+            </form>
+        </div>
+    </div>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>Wasco × Hemi Import</h1>
+                </div>
+                
+                <div class="header-ctas desktop-only">
+                    <a href="https://wa.me/8613026611145" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+                        <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.488"/>
+                        </svg>
+                        WhatsApp — fastest reply in minutes ⚡
+                    </a>
+                    
+                    <a href="tel:+8613026611145" class="btn btn-outline">
+                        <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                        </svg>
+                        Call 24/7
+                    </a>
+                    
+                    <a href="mailto:import@hemiholding.com" class="btn btn-ghost">
+                        <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                        Email
+                    </a>
+                </div>
+                
+                <div class="mobile-only">
+                    <a href="https://wa.me/8613026611145" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+                        <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.488"/>
+                        </svg>
+                        WhatsApp ⚡
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg">
+            <img src="assets/img/hero-industrial.jpg" alt="Industrial production lines and manufacturing equipment" loading="lazy">
+            <div class="hero-overlay"></div>
+        </div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Industrial Production Lines & Equipment — 
+                    <span class="accent">Imported from China, Delivered Worldwide</span>
+                </h1>
+                
+                <p class="hero-subtitle">
+                    Wasco, in partnership with Hemi Import, sources, negotiates, inspects, 
+                    and ships to any seaport worldwide.
+                </p>
+                
+                <div class="hero-buttons">
+                    <a href="https://wa.me/8613026611145" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-xl">
+                        <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.488"/>
+                        </svg>
+                        WhatsApp Us Now (Fast Reply)
+                    </a>
+                    
+                    <a href="tel:+8613026611145" class="btn btn-hero btn-xl">
+                        <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                        </svg>
+                        Call 24/7
+                    </a>
+                    
+                    <a href="mailto:import@hemiholding.com" class="btn btn-outline btn-xl hero-email">
+                        <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                        Email Us
+                    </a>
+                </div>
+                
+                <!-- Trust Badges -->
+                <div class="trust-badges">
+                    <div class="badge">
+                        <div class="badge-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
+                        <p>China Sourcing Experts</p>
+                    </div>
+                    
+                    <div class="badge">
+                        <div class="badge-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                        </div>
+                        <p>End-to-End Logistics</p>
+                    </div>
+                    
+                    <div class="badge">
+                        <div class="badge-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9 12l2 2 4-4M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/>
+                            </svg>
+                        </div>
+                        <p>Quality Inspection Guaranteed</p>
+                    </div>
+                    
+                    <div class="badge">
+                        <div class="badge-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                                <polyline points="3.27,6.96 12,12.01 20.73,6.96"/>
+                                <line x1="12" y1="22.08" x2="12" y2="12"/>
+                            </svg>
+                        </div>
+                        <p>Worldwide Shipping</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Sections -->
+    <section class="products">
+        <div class="container">
+            
+            <!-- Integrated Production Lines -->
+            <div class="product-card">
+                <div class="product-grid">
+                    <div class="product-content">
+                        <h2>Integrated Production Lines for Multiple Industries</h2>
+                        <p class="product-description">
+                            We design, source, and deliver turnkey production lines from reliable Chinese manufacturers, 
+                            tailored to your capacity and compliance needs.
+                        </p>
+                        <div class="product-features">
+                            <div class="feature-column">
+                                <div class="feature">
+                                    <span class="bullet"></span>
+                                    <span>Cement Production Lines</span>
+                                </div>
+                                <div class="feature">
+                                    <span class="bullet"></span>
+                                    <span>AAC Blocks Production Lines</span>
+                                </div>
+                            </div>
+                            <div class="feature-column">
+                                <div class="feature">
+                                    <span class="bullet"></span>
+                                    <span>Advanced Manufacturing Equipment</span>
+                                </div>
+                                <div class="feature">
+                                    <span class="bullet"></span>
+                                    <span>Industrial Automation Systems</span>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/8613026611145" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg">
+                            <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.488"/>
+                            </svg>
+                            Request a Spec Sheet via WhatsApp
+                        </a>
+                    </div>
+                    <div class="product-image">
+                        <img src="assets/img/cement-production.jpg" alt="Modern cement production line with industrial machinery" loading="lazy">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Solar Energy & Technology -->
+            <div class="product-card">
+                <div class="product-grid reverse">
+                    <div class="product-image">
+                        <img src="assets/img/solar-energy.jpg" alt="High-efficiency solar panels and energy storage systems" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h2>Solar Energy & Technology</h2>
+                        <p class="product-description">
+                            Renewable solutions and modern tech equipment for efficient operations.
+                        </p>
+                        <div class="product-features">
+                            <div class="feature-column">
+                                <div class="feature">
+                                    <span class="bullet"></span>
+                                    <span>High-Efficiency Solar Panels</span>
+                                </div>
+                                <div class="feature">
+                                    <span class="bullet"></span>
+                                    <span>Energy Storage Systems</span>
+                                </div>
+                            </div>
+                            <div class="feature-column">
+                                <div class="feature">
+                                    <span class="bullet"></span>
+                                    <span>Modern Technology Machinery</span>
+                                </div>
+                                <div class="feature">
+                                    <span class="bullet"></span>
+                                    <span>Renewable Energy Equipment</span>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/8613026611145" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg">
+                            <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.488"/>
+                            </svg>
+                            Get a Solar Quote on WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pumps & Industrial Machines -->
+            <div class="product-card">
+                <div class="product-grid">
+                    <div class="product-content">
+                        <h2>Pumps & Industrial Machines</h2>
+                        <p class="product-description">
+                            Reliable pumps and heavy-duty industrial machinery for harsh conditions.
+                        </p>
+                        <div class="product-features">
+                            <div class="feature-column">
+                                <div class="feature">
+                                    <span class="bullet"></span>
+                                    <span>Industrial Water Pumps</span>
+                                </div>
+                                <div class="feature">
+                                    <span class="bullet"></span>
+                                    <span>High-Pressure Pumps</span>
+                                </div>
+                            </div>
+                            <div class="feature-column">
+                                <div class="feature">
+                                    <span class="bullet"></span>
+                                    <span>Industrial Steel Machinery</span>
+                                </div>
+                                <div class="feature">
+                                    <span class="bullet"></span>
+                                    <span>Water Treatment Equipment</span>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/8613026611145" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg">
+                            <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.488"/>
+                            </svg>
+                            Check Availability on WhatsApp
+                        </a>
+                    </div>
+                    <div class="product-image">
+                        <img src="assets/img/industrial-pumps.jpg" alt="Industrial water pumps and heavy machinery equipment" loading="lazy">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Custom Solutions -->
+            <div class="custom-solutions">
+                <div class="custom-content">
+                    <h2>Custom Solutions — Any Product You Need</h2>
+                    <p class="custom-description">
+                        Whatever you need from China, we will source it, negotiate the best price, 
+                        and ensure guaranteed quality checks.
+                    </p>
+                    
+                    <div class="custom-features">
+                        <div class="custom-feature">
+                            <div class="custom-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                                </svg>
+                            </div>
+                            <h4>Comprehensive Product Research</h4>
+                        </div>
+                        
+                        <div class="custom-feature">
+                            <div class="custom-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                </svg>
+                            </div>
+                            <h4>Best-Price Negotiation</h4>
+                        </div>
+                        
+                        <div class="custom-feature">
+                            <div class="custom-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
+                                </svg>
+                            </div>
+                            <h4>Guaranteed Quality Inspection</h4>
+                        </div>
+                    </div>
+                    
+                    <div class="custom-cta">
+                        <a href="https://wa.me/8613026611145" target="_blank" rel="noopener noreferrer" class="btn btn-industrial btn-xl">
+                            <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.488"/>
+                            </svg>
+                            Tell Us Your Requirements on WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why WhatsApp Section -->
+    <section class="whatsapp-section">
+        <div class="container">
+            <div class="whatsapp-card">
+                <h2>Why WhatsApp?</h2>
+                
+                <div class="whatsapp-benefits">
+                    <div class="benefit-column">
+                        <div class="benefit">
+                            <div class="benefit-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/>
+                                </svg>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>Instant replies within minutes</h4>
+                                <p>Get immediate responses to your inquiries, no waiting for email replies.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit">
+                            <div class="benefit-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+                                </svg>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>Share photos, drawings, and files easily</h4>
+                                <p>Send specifications, technical drawings, and requirements instantly.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-column">
+                        <div class="benefit">
+                            <div class="benefit-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/>
+                                </svg>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>Voice & video calls supported</h4>
+                                <p>Discuss complex requirements through voice or video calls when needed.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit">
+                            <div class="benefit-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 8.74C4.46 8.97 4 12.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/>
+                                </svg>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>Continuous follow-up on your order</h4>
+                                <p>Stay updated throughout the entire sourcing and shipping process.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="whatsapp-buttons">
+                    <a href="https://wa.me/8613026611145" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-xl">
+                        <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.488"/>
+                        </svg>
+                        WhatsApp (Fastest) ⚡
+                    </a>
+                    
+                    <a href="tel:+8613026611145" class="btn btn-outline btn-xl">
+                        <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                        </svg>
+                        Call 24/7
+                    </a>
+                    
+                    <a href="mailto:import@hemiholding.com" class="btn btn-secondary btn-xl">
+                        <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                        Email (Replies within 1 hour)
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="container">
+            <div class="contact-header">
+                <h2>Contact & Offices</h2>
+                <p>Get in touch with our team for immediate assistance with your industrial equipment needs.</p>
+            </div>
+            
+            <div class="contact-grid">
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <div class="contact-card main-contact">
+                        <h3>
+                            WhatsApp (Fastest) ⚡
+                        </h3>
+                        <p class="phone">+86 130 2661 1145</p>
+                        <p class="description">Get instant replies and share photos, documents, and specifications easily.</p>
+                        <a href="https://wa.me/8613026611145" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg">
+                            <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.488"/>
+                            </svg>
+                            Start WhatsApp Chat
+                        </a>
+                    </div>
+                    
+                    <div class="contact-row">
+                        <div class="contact-card">
+                            <div class="card-header">
+                                <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                                </svg>
+                                <h4>Direct Call (24/7)</h4>
+                            </div>
+                            <p class="phone">+86 130 2661 1145</p>
+                            <a href="tel:+8613026611145" class="btn btn-outline btn-sm">Call Now</a>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <div class="card-header">
+                                <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                                </svg>
+                                <h4>Email (1 Hour Reply)</h4>
+                            </div>
+                            <p class="email">import@hemiholding.com</p>
+                            <a href="mailto:import@hemiholding.com" class="btn btn-outline btn-sm">Send Email</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-row">
+                        <div class="contact-card">
+                            <div class="card-header">
+                                <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                                </svg>
+                                <h4>China Office</h4>
+                            </div>
+                            <p class="address">
+                                Dongguan, Dongcheng District<br>
+                                Office No. 2512
+                            </p>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <div class="card-header">
+                                <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                                </svg>
+                                <h4>Jordan Office</h4>
+                            </div>
+                            <p class="address">
+                                Amman, Muqabalain, Al-Hurriya Street<br>
+                                Building No. 212
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Bar -->
+    <section class="cta-bar">
+        <div class="container">
+            <div class="cta-content">
+                <div class="cta-text">
+                    <h3>Ready to Source Your Industrial Equipment?</h3>
+                    <p>Contact us now for instant quotes and professional consultation</p>
+                </div>
+                <div class="cta-buttons">
+                    <a href="https://wa.me/8613026611145" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg">
+                        <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.488"/>
+                        </svg>
+                        WhatsApp Now
+                    </a>
+                    <a href="tel:+8613026611145" class="btn btn-outline btn-lg">Call 24/7</a>
+                    <a href="mailto:import@hemiholding.com" class="btn btn-secondary btn-lg">Email Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-company">
+                    <h3>Wasco × Hemi Import</h3>
+                    <p>
+                        Wasco × Hemi Import specialize in sourcing and importing industrial production lines 
+                        and equipment from China, with global shipping and quality inspections.
+                    </p>
+                    
+                    <div class="footer-offices">
+                        <div class="office">
+                            <strong>China Office</strong><br>
+                            Dongguan, Dongcheng District<br>
+                            Office No. 2512
+                        </div>
+                        <div class="office">
+                            <strong>Jordan Office</strong><br>
+                            Amman, Muqabalain, Al-Hurriya Street<br>
+                            Building No. 212
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Important Links</h4>
+                    <div class="links">
+                        <a href="privacy.html">Privacy Policy</a>
+                        <a href="terms.html">Terms & Conditions</a>
+                        <a href="refund.html">Refund Policy</a>
+                    </div>
+                    
+                    <div class="footer-contact">
+                        <div><strong>WhatsApp (Fastest):</strong> +86 130 2661 1145</div>
+                        <div><strong>Direct Call (24/7):</strong> +86 130 2661 1145</div>
+                        <div><strong>Email (Replies within 1 Hour):</strong> import@hemiholding.com</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Wasco × Hemi Import. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Countries data - all 195+ countries
+        const countries = [
+            "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antigua and Barbuda", "Argentina", "Armenia", "Australia", "Austria",
+            "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bhutan",
+            "Bolivia", "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cabo Verde", "Cambodia",
+            "Cameroon", "Canada", "Central African Republic", "Chad", "Chile", "China", "Colombia", "Comoros", "Congo", "Costa Rica",
+            "Croatia", "Cuba", "Cyprus", "Czech Republic", "Democratic Republic of the Congo", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "Ecuador",
+            "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France",
+            "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Greece", "Grenada", "Guatemala", "Guinea", "Guinea-Bissau",
+            "Guyana", "Haiti", "Honduras", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland",
+            "Israel", "Italy", "Ivory Coast", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Kuwait",
+            "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg",
+            "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Mauritania", "Mauritius", "Mexico",
+            "Micronesia", "Moldova", "Monaco", "Mongolia", "Montenegro", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru",
+            "Nepal", "Netherlands", "New Zealand", "Nicaragua", "Niger", "Nigeria", "North Korea", "North Macedonia", "Norway", "Oman",
+            "Pakistan", "Palau", "Palestine", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Poland", "Portugal",
+            "Qatar", "Romania", "Russia", "Rwanda", "Saint Kitts and Nevis", "Saint Lucia", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe",
+            "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia",
+            "South Africa", "South Korea", "South Sudan", "Spain", "Sri Lanka", "Sudan", "Suriname", "Sweden", "Switzerland", "Syria",
+            "Taiwan", "Tajikistan", "Tanzania", "Thailand", "Timor-Leste", "Togo", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey",
+            "Turkmenistan", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "Uruguay", "Uzbekistan", "Vanuatu",
+            "Vatican City", "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe"
+        ];
+
+        let filteredCountries = [...countries];
+        let selectedCountryIndex = -1;
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            populateCountries();
+            setupEventListeners();
+        });
+
+        // Populate countries dropdown
+        function populateCountries() {
+            const countryOptions = document.getElementById('countryOptions');
+            countryOptions.innerHTML = '';
+            
+            filteredCountries.forEach((country, index) => {
+                const option = document.createElement('div');
+                option.className = 'country-option';
+                option.textContent = country;
+                option.onclick = () => selectCountry(country);
+                countryOptions.appendChild(option);
+            });
+        }
+
+        // Setup event listeners
+        function setupEventListeners() {
+            // Close popup when clicking outside
+            document.getElementById('whatsappPopup').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeWhatsAppPopup();
+                }
+            });
+
+            // Country input keyboard navigation
+            document.getElementById('countryInput').addEventListener('keydown', function(e) {
+                const options = document.querySelectorAll('.country-option');
+                
+                if (e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    selectedCountryIndex = Math.min(selectedCountryIndex + 1, options.length - 1);
+                    updateHighlight();
+                } else if (e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    selectedCountryIndex = Math.max(selectedCountryIndex - 1, -1);
+                    updateHighlight();
+                } else if (e.key === 'Enter') {
+                    e.preventDefault();
+                    if (selectedCountryIndex >= 0 && options[selectedCountryIndex]) {
+                        selectCountry(options[selectedCountryIndex].textContent);
+                    }
+                } else if (e.key === 'Escape') {
+                    closeCountryDropdown();
+                }
+            });
+        }
+
+        // Open WhatsApp popup
+        function openWhatsAppPopup() {
+            document.getElementById('whatsappPopup').classList.add('active');
+            document.body.style.overflow = 'hidden';
+            
+            // Track popup open event
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'popup_open', {
+                    event_category: 'engagement',
+                    event_label: 'whatsapp_form'
+                });
+            }
+        }
+
+        // Close WhatsApp popup
+        function closeWhatsAppPopup() {
+            document.getElementById('whatsappPopup').classList.remove('active');
+            document.body.style.overflow = '';
+            resetForm();
+        }
+
+        // Reset form
+        function resetForm() {
+            document.querySelector('.whatsapp-form').reset();
+            document.getElementById('selectedCountry').value = '';
+            document.getElementById('countryInput').value = '';
+            document.getElementById('customEquipmentField').classList.remove('active');
+            closeCountryDropdown();
+        }
+
+        // Toggle custom equipment field
+        function toggleCustomEquipment() {
+            const productType = document.getElementById('productType').value;
+            const customField = document.getElementById('customEquipmentField');
+            const customDetails = document.getElementById('customDetails');
+            
+            if (productType === 'Custom Equipment') {
+                customField.classList.add('active');
+                customDetails.required = true;
+            } else {
+                customField.classList.remove('active');
+                customDetails.required = false;
+                customDetails.value = '';
+            }
+        }
+
+        // Toggle country dropdown
+        function toggleCountryDropdown() {
+            const dropdown = document.getElementById('countryDropdown');
+            const options = document.getElementById('countryOptions');
+            const input = document.getElementById('countryInput');
+            
+            if (dropdown.classList.contains('active')) {
+                closeCountryDropdown();
+            } else {
+                dropdown.classList.add('active');
+                options.classList.add('active');
+                input.removeAttribute('readonly');
+                input.focus();
+                selectedCountryIndex = -1;
+            }
+        }
+
+        // Close country dropdown
+        function closeCountryDropdown() {
+            const dropdown = document.getElementById('countryDropdown');
+            const options = document.getElementById('countryOptions');
+            const input = document.getElementById('countryInput');
+            
+            dropdown.classList.remove('active');
+            options.classList.remove('active');
+            input.setAttribute('readonly', 'readonly');
+            selectedCountryIndex = -1;
+        }
+
+        // Filter countries based on search
+        function filterCountries() {
+            const searchTerm = document.getElementById('countryInput').value.toLowerCase();
+            filteredCountries = countries.filter(country => 
+                country.toLowerCase().includes(searchTerm)
+            );
+            
+            const countryOptions = document.getElementById('countryOptions');
+            countryOptions.innerHTML = '';
+            
+            if (filteredCountries.length === 0) {
+                const noResults = document.createElement('div');
+                noResults.className = 'no-results';
+                noResults.textContent = 'No countries found';
+                countryOptions.appendChild(noResults);
+            } else {
+                filteredCountries.forEach((country, index) => {
+                    const option = document.createElement('div');
+                    option.className = 'country-option';
+                    option.textContent = country;
+                    option.onclick = () => selectCountry(country);
+                    countryOptions.appendChild(option);
+                });
+            }
+            
+            selectedCountryIndex = -1;
+        }
+
+        // Select country
+        function selectCountry(country) {
+            document.getElementById('countryInput').value = country;
+            document.getElementById('selectedCountry').value = country;
+            closeCountryDropdown();
+        }
+
+        // Update highlight for keyboard navigation
+        function updateHighlight() {
+            const options = document.querySelectorAll('.country-option');
+            options.forEach((option, index) => {
+                option.classList.toggle('highlighted', index === selectedCountryIndex);
+            });
+            
+            // Scroll highlighted option into view
+            if (selectedCountryIndex >= 0 && options[selectedCountryIndex]) {
+                options[selectedCountryIndex].scrollIntoView({
+                    block: 'nearest'
+                });
+            }
+        }
+
+        // Submit WhatsApp form
+        function submitWhatsAppForm(event) {
+            event.preventDefault();
+            
+            const formData = new FormData(event.target);
+            const productType = formData.get('productType');
+            const customDetails = formData.get('customDetails');
+            const quantity = formData.get('quantity');
+            const country = formData.get('country');
+            
+            // Validate required fields
+            if (!productType || !quantity || !country) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            if (productType === 'Custom Equipment' && !customDetails) {
+                alert('Please describe the custom equipment you need.');
+                return;
+            }
+            
+            // Generate WhatsApp message
+            let message = `Hi, I'm interested in importing/exporting industrial equipment.
+
+My Requirements:
+- Product: ${productType}`;
+            
+            if (productType === 'Custom Equipment' && customDetails) {
+                message += `
+- Details: ${customDetails}`;
+            }
+            
+            message += `
+- Quantity: ${quantity}
+- Destination Country: ${country}
+
+Could you please assist me with pricing, specifications, and the import process?`;
+            
+            // Track conversion event
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'conversion', {
+                    send_to: 'AW-CONVERSION_ID/WASCO_Industrial_Equipment_Lead_Form',
+                    value: 50,
+                    currency: 'TRY',
+                    event_category: 'lead_generation',
+                    event_label: 'whatsapp_form_submission',
+                    custom_parameters: {
+                        product_type: productType,
+                        quantity: quantity,
+                        country: country
+                    }
+                });
+            }
+            
+            // Push to dataLayer for GTM
+            if (typeof dataLayer !== 'undefined') {
+                dataLayer.push({
+                    event: 'WASCO_Industrial_Equipment_Lead_Form',
+                    event_category: 'lead_generation',
+                    event_action: 'form_submission',
+                    event_label: 'whatsapp_form',
+                    value: 50,
+                    currency: 'TRY',
+                    product_type: productType,
+                    quantity: quantity,
+                    destination_country: country,
+                    custom_equipment_details: customDetails || ''
+                });
+            }
+            
+            // Encode message for WhatsApp URL
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappURL = `https://wa.me/8613026611145?text=${encodedMessage}`;
+            
+            // Open WhatsApp
+            window.open(whatsappURL, '_blank');
+            
+            // Close popup
+            closeWhatsAppPopup();
+            
+            // Show success message
+            setTimeout(() => {
+                alert('Thank you! Your message has been prepared. Please send it via WhatsApp to complete your inquiry.');
+            }, 500);
+        }
+
+        // Replace all WhatsApp links with popup triggers
+        document.addEventListener('DOMContentLoaded', function() {
+            const whatsappLinks = document.querySelectorAll('a[href*="wa.me"]');
+            whatsappLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    openWhatsAppPopup();
+                });
+            });
+        });
+
+        // Google Tag Manager setup (placeholder for GTM container)
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        // GTM container will be configured here
+        // gtag('config', 'GTM-XXXXXXX');
+    </script>
+</body>
+</html>
