@@ -709,6 +709,32 @@
                     closeCountryDropdown();
                 }
             });
+
+            // Mobile-specific event listeners for country input
+            const countryInput = document.getElementById('countryInput');
+            const countrySearch = document.querySelector('.country-search');
+            
+            // Add touch events for mobile
+            if (isMobileDevice()) {
+                countrySearch.addEventListener('touchstart', function(e) {
+                    e.preventDefault();
+                    toggleCountryDropdown();
+                });
+                
+                countryInput.addEventListener('touchstart', function(e) {
+                    e.stopPropagation();
+                    if (!document.getElementById('countryDropdown').classList.contains('active')) {
+                        toggleCountryDropdown();
+                    }
+                });
+                
+                // Ensure input can receive focus on mobile
+                countryInput.addEventListener('focus', function() {
+                    if (!document.getElementById('countryDropdown').classList.contains('active')) {
+                        toggleCountryDropdown();
+                    }
+                });
+            }
         }
 
         // Open WhatsApp popup
@@ -757,6 +783,13 @@
             }
         }
 
+        // Check if device is mobile
+        function isMobileDevice() {
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || 
+                   ('ontouchstart' in window) || 
+                   (window.innerWidth <= 768);
+        }
+
         // Toggle country dropdown
         function toggleCountryDropdown() {
             const dropdown = document.getElementById('countryDropdown');
@@ -769,7 +802,18 @@
                 dropdown.classList.add('active');
                 options.classList.add('active');
                 input.removeAttribute('readonly');
-                input.focus();
+                
+                // For mobile devices, ensure keyboard appears
+                if (isMobileDevice()) {
+                    // Small delay to ensure DOM is updated
+                    setTimeout(() => {
+                        input.focus();
+                        input.click();
+                    }, 100);
+                } else {
+                    input.focus();
+                }
+                
                 selectedCountryIndex = -1;
             }
         }
