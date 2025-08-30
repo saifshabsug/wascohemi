@@ -724,33 +724,31 @@
                 }
             });
 
-            // Setup mobile-friendly country input
+            // Setup country input for both mobile and desktop
             const countryInput = document.getElementById('countryInput');
             const countrySearch = document.querySelector('.country-search');
             
-            if (isMobileDevice()) {
-                // Remove readonly for mobile to allow keyboard
-                countryInput.removeAttribute('readonly');
-                
-                // Simple click handler for mobile
-                countrySearch.addEventListener('click', function(e) {
-                    if (!document.getElementById('countryDropdown').classList.contains('active')) {
-                        openCountryDropdown();
-                    }
-                });
-                
-                // Focus handler for mobile
-                countryInput.addEventListener('focus', function() {
-                    if (!document.getElementById('countryDropdown').classList.contains('active')) {
-                        openCountryDropdown();
-                    }
-                });
-            } else {
-                // Desktop behavior - keep readonly and use click to toggle
-                countrySearch.addEventListener('click', function(e) {
-                    toggleCountryDropdown();
-                });
-            }
+            // Click handler for both mobile and desktop
+            countrySearch.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                toggleCountryDropdown();
+            });
+            
+            // Focus handler
+            countryInput.addEventListener('focus', function() {
+                if (!document.getElementById('countryDropdown').classList.contains('active')) {
+                    openCountryDropdown();
+                }
+            });
+            
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function(e) {
+                const dropdown = document.getElementById('countryDropdown');
+                if (!dropdown.contains(e.target) && dropdown.classList.contains('active')) {
+                    closeCountryDropdown();
+                }
+            });
         }
 
         // Open WhatsApp popup
@@ -926,7 +924,7 @@
             }
             
             // Generate WhatsApp message
-            let message = `Hi, I'm interested in importing/exporting industrial equipment.
+            let message = `Hi, I'm interested in importing/exporting industrial machines and production lines. Could you assist me with the process?
 
 My Requirements:
 - Product: ${productType}`;
@@ -945,7 +943,7 @@ Could you please assist me with pricing, specifications, and the import process?
             // Track conversion event
             if (typeof gtag !== 'undefined') {
                 gtag('event', 'conversion', {
-                    send_to: 'AW-CONVERSION_ID/WASCO_Industrial_Equipment_Lead_Form',
+                    send_to: 'AW-16589946378/fPAoCPy6zZAbEIr82eY9',
                     value: 50,
                     currency: 'TRY',
                     event_category: 'lead_generation',

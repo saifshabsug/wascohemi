@@ -1145,6 +1145,33 @@ p {
         padding: 0 16px;
     }
     
+    /* Fix horizontal scrolling */
+    body {
+        overflow-x: hidden;
+    }
+    
+    * {
+        max-width: 100%;
+    }
+    
+    .hero-buttons {
+        width: 100%;
+    }
+    
+    .btn {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .cta-buttons .btn {
+        width: 100%;
+    }
+    
+    .whatsapp-buttons .btn {
+        width: 100%;
+    }
+    
     .popup-content {
         padding: 1.5rem;
         margin: 1rem;
