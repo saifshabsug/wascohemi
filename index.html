@@ -663,6 +663,13 @@
         document.addEventListener('DOMContentLoaded', function() {
             populateCountries();
             setupEventListeners();
+            
+            // Set initial state for mobile
+            if (isMobileDevice()) {
+                const countryInput = document.getElementById('countryInput');
+                countryInput.removeAttribute('readonly');
+                countryInput.placeholder = 'Tap to search countries...';
+            }
         });
 
         // Populate countries dropdown
@@ -710,29 +717,31 @@
                 }
             });
 
-            // Mobile-specific event listeners for country input
+            // Setup mobile-friendly country input
             const countryInput = document.getElementById('countryInput');
             const countrySearch = document.querySelector('.country-search');
             
-            // Add touch events for mobile
             if (isMobileDevice()) {
-                countrySearch.addEventListener('touchstart', function(e) {
-                    e.preventDefault();
-                    toggleCountryDropdown();
-                });
+                // Remove readonly for mobile to allow keyboard
+                countryInput.removeAttribute('readonly');
                 
-                countryInput.addEventListener('touchstart', function(e) {
-                    e.stopPropagation();
+                // Simple click handler for mobile
+                countrySearch.addEventListener('click', function(e) {
                     if (!document.getElementById('countryDropdown').classList.contains('active')) {
-                        toggleCountryDropdown();
+                        openCountryDropdown();
                     }
                 });
                 
-                // Ensure input can receive focus on mobile
+                // Focus handler for mobile
                 countryInput.addEventListener('focus', function() {
                     if (!document.getElementById('countryDropdown').classList.contains('active')) {
-                        toggleCountryDropdown();
+                        openCountryDropdown();
                     }
+                });
+            } else {
+                // Desktop behavior - keep readonly and use click to toggle
+                countrySearch.addEventListener('click', function(e) {
+                    toggleCountryDropdown();
                 });
             }
         }
@@ -790,31 +799,34 @@
                    (window.innerWidth <= 768);
         }
 
-        // Toggle country dropdown
-        function toggleCountryDropdown() {
+        // Open country dropdown (mobile-friendly)
+        function openCountryDropdown() {
             const dropdown = document.getElementById('countryDropdown');
             const options = document.getElementById('countryOptions');
             const input = document.getElementById('countryInput');
             
+            dropdown.classList.add('active');
+            options.classList.add('active');
+            
+            // Ensure input is editable
+            input.removeAttribute('readonly');
+            
+            // Focus the input to trigger keyboard
+            setTimeout(() => {
+                input.focus();
+            }, 50);
+            
+            selectedCountryIndex = -1;
+        }
+
+        // Toggle country dropdown (desktop)
+        function toggleCountryDropdown() {
+            const dropdown = document.getElementById('countryDropdown');
+            
             if (dropdown.classList.contains('active')) {
                 closeCountryDropdown();
             } else {
-                dropdown.classList.add('active');
-                options.classList.add('active');
-                input.removeAttribute('readonly');
-                
-                // For mobile devices, ensure keyboard appears
-                if (isMobileDevice()) {
-                    // Small delay to ensure DOM is updated
-                    setTimeout(() => {
-                        input.focus();
-                        input.click();
-                    }, 100);
-                } else {
-                    input.focus();
-                }
-                
-                selectedCountryIndex = -1;
+                openCountryDropdown();
             }
         }
 
@@ -826,7 +838,12 @@
             
             dropdown.classList.remove('active');
             options.classList.remove('active');
-            input.setAttribute('readonly', 'readonly');
+            
+            // Only set readonly on desktop
+            if (!isMobileDevice()) {
+                input.setAttribute('readonly', 'readonly');
+            }
+            
             selectedCountryIndex = -1;
         }
 
